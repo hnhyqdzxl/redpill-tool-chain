@@ -65,7 +65,7 @@ jobs:
           sed -i -e "s/1234XXX123/${sn:="D2F7XHBW2HR9R"}/g" -e 's/XXYYXXYYXXYY/0011321DFBF4/g' ${{matrix.platform}}_user_config.json
 
           # 添加第二张网卡mac并设置网卡数量
-          sed -i -e 's/0011321DFBF2"/&,\n\t"mac2": "0011321DFBF3",\n\t"mac3": "0011321DFBF2",\n\t"netif_num": 3/' ${{matrix.platform}}_user_config.json
+          sed -i -e 's/0011321DFBF4"/&,\n\t"mac2": "0011321DFBF3",\n\t"mac3": "0011321DFBF2",\n\t"netif_num": 3/' ${{matrix.platform}}_user_config.json
 
           # 调整synoinfo
           sed -i -e 's/"synoinfo": {},/"synoinfo": {\n\t"maxlanport": "3"\n    },/' ${{matrix.platform}}_user_config.json
@@ -78,11 +78,11 @@ jobs:
           ./redpill_tool_chain.sh add https://github.com/tossp/redpill-tool-chain/raw/master/extensions/redpill-boot-wait.json
           ./redpill_tool_chain.sh add https://github.com/tossp/redpill-tool-chain/raw/master/extensions/redpill-acpid.json
           ./redpill_tool_chain.sh add https://github.com/tossp/redpill-tool-chain/raw/master/extensions/redpill-virtio.json
-          ./redpill_tool_chain.sh add https://raw.githubusercontent.com/pocopico/rp-ext/master/bnx2x/rpext-index.json
+          #./redpill_tool_chain.sh add https://raw.githubusercontent.com/pocopico/rp-ext/master/bnx2x/rpext-index.json
           ./redpill_tool_chain.sh add https://raw.githubusercontent.com/pocopico/rp-ext/master/e1000/rpext-index.json
           ./redpill_tool_chain.sh add https://raw.githubusercontent.com/pocopico/rp-ext/master/e1000e/rpext-index.json
-           ./redpill_tool_chain.sh add https://raw.githubusercontent.com/pocopico/rp-ext/master/igb/rpext-index.json
-          ./redpill_tool_chain.sh add https://raw.githubusercontent.com/pocopico/rp-ext/master/igbvf/rpext-index.json
+           #./redpill_tool_chain.sh add https://raw.githubusercontent.com/pocopico/rp-ext/master/igb/rpext-index.json
+          #./redpill_tool_chain.sh add https://raw.githubusercontent.com/pocopico/rp-ext/master/igbvf/rpext-index.json
           ./redpill_tool_chain.sh add https://raw.githubusercontent.com/pocopico/rp-ext/master/ixgbe/rpext-index.json
           ./redpill_tool_chain.sh add https://raw.githubusercontent.com/pocopico/rp-ext/master/ixgbevf/rpext-index.json
           #./redpill_tool_chain.sh add https://raw.githubusercontent.com/pocopico/rp-ext/master/tg3/rpext-index.json
